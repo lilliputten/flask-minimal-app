@@ -1,0 +1,4 @@
+[virtualenvs]
+
+# Store '.venv' in the project folder
+in-project = true

@@ -1,0 +1,34 @@
+{
+  "name": "flask-minimal-app",
+  "version": "0.0.0",
+  "changed": "2024.11.27, 14:40",
+  "description": "Flask minimal application",
+  "main": "api/__init__.py",
+  "keywords": [],
+  "author": "lilliputten <lilliputten@gmail.com>",
+  "license": "ISC",
+  "reservedDependencies": {
+    "ngrok": "5.0.0-beta.2",
+    "syslog-server": "^1.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "npm-package-user-scripts-list": "^0.1.10",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "ngrok-flask": "echo --Start ngrok tunnel for flask (don't forget to add following ngrok address WEBHOOK_HOST to .env)-- && ngrok http 5000",
+    "ngrok-logging": "echo --Start ngrok tunnel for logging server (don't forget to add the following ngrok address to vercel's LOGS_SERVER_HOST parameter, and re-deploy the project)-- && ngrok http 8514",
+    "clean": "echo --Clean cache-- && sh .utils/clean-cache.sh",
+    "pylint": "echo --Run pyright python linter-- && poetry run pyright .",
+    "logging-server": "echo --Run local logging server-- && poetry run python logging-server.py",
+    "logging-server-syslog": "echo --Run local syslog logging server-- && poetry run python logging-server-syslog.py",
+    "pyformat-autopep8": "echo --Run autopep8 python formatter-- && poetry run autopep8 .",
+    "pyformat": "echo --Run blue python formatter-- && poetry run blue .",
+    "check-all": "echo --Run all formatters, linters and tests-- && npm-run-all pyformat pylint",
+    "dev": "echo --Run flask dev server via poetry-- && poetry run flask --app api --debug run",
+    "export-requirements": "echo --Export requirements from with poetry for vercel-- && poetry export -f requirements.txt --output requirements.txt --without-hashes && echo OK",
+    "help": "echo --List all available script commands-- && npm-package-user-scripts-list"
+  }
+}

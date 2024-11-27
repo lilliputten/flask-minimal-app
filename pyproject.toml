@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "flask-minimal-app"
+version = "0.0.0"
+description = "Flask minimal application"
+authors = ["lilliputten <lilliputten@gmail.com>"]
+readme = "README.md"
+
+# @see https://python-poetry.org/docs/pyproject/#packages
+packages = [
+    # { include = "flask-minimal-app" },
+    { include = "api" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10" # "^3.12"
+flask = "^3.1.0"
+python-dotenv = "^1.0.1"
+requests = "^2.32.3"
+# pytelegrambotapi = "^4.24.0" # tg api, @see https://pypi.org/project/pyTelegramBotAPI/
+# yt-dlp = "^2024.11.18" # youtube saver, @see https://github.com/yt-dlp/yt-dlp
+
+[tool.poetry.group.dev.dependencies]
+blue = "^0.9.1"
+pyright = "^1.1.389"
+poetry-plugin-export = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.autopep8]
+max_line_length = 120
+# ignore = "E501,W6"  # or ["E501", "W6"]
+in-place = true
+recursive = true
+aggressive = 3
+
+[tool.black]
+line-length = 120
+
+[tool.blue]
+line-length = 120
+# TODO!
+
+[tool.poetry.scripts]
+dev = 'mypackage.mymodule:mycommand'
+
