@@ -60,6 +60,7 @@ questions.yaml
 
 # Unused & temp files
 \!UNUSED
+*UNUSED
 ~*
 *_
 zia*
