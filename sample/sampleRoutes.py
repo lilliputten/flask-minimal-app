@@ -5,6 +5,7 @@ import traceback
 from flask import Blueprint
 from flask import Response
 from flask import request
+
 #  import telebot # pyTelegramBotAPI
 
 from core.helpers import errorToString
@@ -92,7 +93,7 @@ def sampleRoot():
     result: bool
     try:
         # TODO
-        result = True # initWebhook()
+        result = True   # initWebhook()
     except Exception as err:
         sError = errorToString(err, show_stacktrace=False)
         sTraceback = str(traceback.format_exc())
@@ -121,6 +122,7 @@ def sampleRoot():
     )
     logger.info(content)
     return Response(content, headers={'Content-type': 'text/plain'})
+
 
 # DEBUG
 logSampleStarted()
