@@ -7,8 +7,8 @@ rootPath=`dirname "$scriptsPath"`
 prjPath="$rootPath" # `pwd`
 
 # Import config variables (expected variables `$DIST_REPO` and `$PUBLISH_FOLDER`)...
-test -f "$rootPath/config.sh" && . "$rootPath/config.sh"
-test -f "$rootPath/config-local.sh" && . "$rootPath/config-local.sh"
+test -f "$scriptsPath/config.sh" && . "$scriptsPath/config.sh"
+test -f "$scriptsPath/config-local.sh" && . "$scriptsPath/config-local.sh"
 
 # # Check basic required variables...
 # test -f "$rootPath/config-check.sh" && . "$rootPath/config-check.sh" --omit-publish-folder-check
@@ -22,11 +22,10 @@ PROJECT_INFO_REP=`echo "$PROJECT_INFO" | sed 's,/,\\\\/,g'` # Quoted for replace
 
 echo "Version/time: $VERSION / $TIMESTAMP"
 
-# Move to config?
-PROJECT_INFO_FILE="flaskApp/static/project-info.txt"
-
-echo "Creating '$PROJECT_INFO_FILE' file..."
-echo "$PROJECT_INFO" > $PROJECT_INFO_FILE
+if [ ! -z "${PROJECT_INFO_FILE}" ]; then
+  echo "Creating '$PROJECT_INFO_FILE' file..."
+  echo "$PROJECT_INFO" > $PROJECT_INFO_FILE
+fi
 
 UPDATE_FILE() {
   FILE=$1
