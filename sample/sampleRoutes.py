@@ -115,7 +115,7 @@ def sampleRoot():
     debugData = debugObj(obj, debugKeysList)
     content = '\n\n'.join(
         [
-            'Sample root route',
+            'sampleRoot: Sample root route',
             debugData,
         ]
     )
