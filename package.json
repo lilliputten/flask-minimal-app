@@ -1,6 +1,6 @@
 {
   "name": "flask-minimal-app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "changed": "2024.11.27, 14:40",
   "description": "Flask minimal application",
   "main": "api/__init__.py",

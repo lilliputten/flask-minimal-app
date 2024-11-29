@@ -12,7 +12,7 @@ Flask minimal application
 
 ## Build info (auto-generated)
 
-- Project info: v.0.0.0 / 2024.11.28 23:42:09 +0300
+- Project info: v.0.0.1 / 2024.11.29 11:46:06 +0300
 
 
 ## Resources
